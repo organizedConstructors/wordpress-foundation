@@ -104,7 +104,7 @@ function bones_register_sidebars() {
 function theme_styles()  
 { 
     // Bring in Open Sans from Google fonts
-    wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300,800');
+    wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300,800&subset=latin,latin-ext');
     // This is the compiled css file from SCSS
     wp_register_style( 'foundation-app', get_template_directory_uri() . '/stylesheets/app.css', array(), '3.0', 'all' );
     

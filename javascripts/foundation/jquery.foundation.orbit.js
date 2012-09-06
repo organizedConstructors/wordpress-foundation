@@ -7,7 +7,7 @@
 */
 
 
-(function($) {
+(function ($) {
   'use strict';
   $.fn.findFirstImage = function () {
     return this.first()
@@ -235,18 +235,19 @@
         }, this.options.advanceSpeed);
       } else {
         this.timerRunning = true;
-        this.$pause.removeClass('active')
-        this.clock = setInterval(this.rotateTimer, this.options.advanceSpeed / 180);
+        this.$pause.removeClass('active');
+        this.clock = setInterval(this.rotateTimer, this.options.advanceSpeed / 180, false);
       }
     },
 
     rotateTimer: function (reset) {
-      var degreeCSS = "rotate(" + this.degrees + "deg)"
+      var degreeCSS = "rotate(" + this.degrees + "deg)";
       this.degrees += 2;
       this.$rotator.css({
         "-webkit-transform": degreeCSS,
         "-moz-transform": degreeCSS,
-        "-o-transform": degreeCSS
+        "-o-transform": degreeCSS,
+        "-ms-transform": degreeCSS
       });
       if(this.degrees > 180) {
         this.$rotator.addClass('move');

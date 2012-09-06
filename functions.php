@@ -133,7 +133,7 @@ if( $test_url !== false ) { // test if the URL exists
 
     function load_local_jQuery() {  
         wp_deregister_script('jquery'); // initiate the function  
-        wp_register_script('jquery', get_template_directory_uri().'/javascripts/jquery.min.js', __FILE__, '1.7.2'); // register the local file  
+        wp_register_script('jquery', get_template_directory_uri().'/javascripts/foundation/jquery.js', __FILE__, '1.7.2'); // register the local file
         wp_enqueue_script('jquery'); // enqueue the local file  
     }  
 
@@ -149,20 +149,34 @@ function modernize_it(){
 add_action( 'wp_enqueue_scripts', 'modernize_it' );
 
 function foundation_js(){
-    wp_register_script( 'foundation-reveal', get_template_directory_uri() . '/javascripts/foundation/jquery.reveal.js' ); 
-    wp_enqueue_script( 'foundation-reveal', 'jQuery', '1.1', true );
-    wp_register_script( 'foundation-orbit', get_template_directory_uri() . '/javascripts/foundation/jquery.orbit-1.4.0.js' ); 
-    wp_enqueue_script( 'foundation-orbit', 'jQuery', '1.4.0', true );
-    wp_register_script( 'foundation-custom-forms', get_template_directory_uri() . '/javascripts/foundation/jquery.customforms.js' ); 
-    wp_enqueue_script( 'foundation-custom-forms', 'jQuery', '1.0', true );
-    wp_register_script( 'foundation-placeholder', get_template_directory_uri() . '/javascripts/foundation/jquery.placeholder.min.js' ); 
+    wp_register_script( 'foundation-placeholder', get_template_directory_uri() . '/javascripts/foundation/jquery.placeholder.js' );
     wp_enqueue_script( 'foundation-placeholder', 'jQuery', '2.0.7', true );
-    wp_register_script( 'foundation-tooltips', get_template_directory_uri() . '/javascripts/foundation/jquery.tooltips.js' ); 
+    wp_register_script( 'foundation-buttons', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.buttons.js' );
+    wp_enqueue_script( 'foundation-buttons', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-tooltips', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.tooltips.js' );
     wp_enqueue_script( 'foundation-tooltips', 'jQuery', '2.0.1', true );
-    wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/app.js' ); 
+    wp_register_script( 'foundation-alerts', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.alerts.js' );
+    wp_enqueue_script( 'foundation-alerts', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-orbit', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.orbit.js' );
+    wp_enqueue_script( 'foundation-orbit', 'jQuery', '1.4.0', true );
+    wp_register_script( 'foundation-navigation', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.navigation.js' );
+    wp_enqueue_script( 'foundation-navigation', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-tabs', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.tabs.js' );
+    wp_enqueue_script( 'foundation-tabs', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-accordion', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.accordion.js' );
+    wp_enqueue_script( 'foundation-accordion', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-mediaquerytoggle', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.mediaQueryToggle.js' );
+    wp_enqueue_script( 'foundation-mediaquerytoggle', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-reveal', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.reveal.js' );
+    wp_enqueue_script( 'foundation-reveal', 'jQuery', '1.1', true );
+    wp_register_script( 'foundation-forms', get_template_directory_uri() . '/javascripts/foundation/jquery.customforms.js' );
+    wp_enqueue_script( 'foundation-forms', 'jQuery', '1.0', true );
+    // @TODO: check what's up with this one @ ZURB
+    //wp_register_script( 'foundation-off-canvas', get_template_directory_uri() . '/javascripts/foundation/jquery.offcanvas.js' );
+    //wp_enqueue_script( 'foundation-off-canvas', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/foundation/app.js' );
     wp_enqueue_script( 'foundation-app', 'jQuery', '1.0', true );
-    wp_register_script( 'foundation-off-canvas', get_template_directory_uri() . '/javascripts/foundation/off-canvas.js' ); 
-    wp_enqueue_script( 'foundation-off-canvas', 'jQuery', '1.0', true );
+
 }
 
 add_action('wp_enqueue_scripts', 'foundation_js');

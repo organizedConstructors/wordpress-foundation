@@ -1,7 +1,7 @@
 WORDPRESS FOUNDATION
 ===================
 
-UPDATED TO VERSION 3.0
+UPDATED TO VERSION 3.0.9
 
 Zurb's Foundation (http://foundation.zurb.com) in WordPress theme form. Using Eddie Machado's Bones for a starting point (https://github.com/eddiemachado/bones). 
 

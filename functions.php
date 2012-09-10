@@ -171,12 +171,10 @@ function foundation_js(){
     wp_enqueue_script( 'foundation-reveal', 'jQuery', '1.1', true );
     wp_register_script( 'foundation-forms', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.forms.js' );
     wp_enqueue_script( 'foundation-forms', 'jQuery', '1.0', true );
-    // @TODO: check what's up with this one @ ZURB
-    //wp_register_script( 'foundation-off-canvas', get_template_directory_uri() . '/javascripts/foundation/jquery.offcanvas.js' );
-    //wp_enqueue_script( 'foundation-off-canvas', 'jQuery', '1.0', true );
+    wp_register_script( 'foundation-off-canvas', get_template_directory_uri() . '/javascripts/foundation/jquery.offcanvas.js' );
+    wp_enqueue_script( 'foundation-off-canvas', 'jQuery', '1.0', true );
     wp_register_script( 'foundation-app', get_template_directory_uri() . '/javascripts/foundation/app.js' );
     wp_enqueue_script( 'foundation-app', 'jQuery', '1.0', true );
-
 }
 
 add_action('wp_enqueue_scripts', 'foundation_js');

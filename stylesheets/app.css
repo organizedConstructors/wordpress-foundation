@@ -4191,3 +4191,8 @@ p.vevent abbr {
   border: none;
   padding: 0 1px;
 }
+
+/* line 1, ../sass/_fancybox_reset.scss */
+#fancybox-wrap, #fancybox-wrap * {
+  box-sizing: content-box;
+}

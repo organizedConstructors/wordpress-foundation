@@ -1,0 +1,4 @@
+#fancybox-wrap, #fancybox-wrap * {
+  // restore usual box sizing for Fancybox
+  box-sizing: content-box;
+}

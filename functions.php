@@ -8,19 +8,51 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
-// Get Bones Core Up & Running!
-require_once('library/bones.php');            // core functions (don't remove)
-require_once('library/plugins.php');          // plugins & extra functions (optional)
-// require_once('library/custom-post-type.php'); // custom post type example
+/************* INCLUDE NEEDED FILES ***************/
+
+/*
+1. library/bones.php
+    - head cleanup (remove rsd, uri links, junk css, ect)
+	- enqueueing scripts & styles
+	- theme support functions
+    - custom menu output & fallbacks
+	- related post function
+	- page-navi function
+	- removing <p> from around images
+	- customizing the post excerpt
+	- custom google+ integration
+	- adding custom fields to user profiles
+*/
+require_once('library/bones.php'); // if you remove this, bones will break
+/*
+2. library/custom-post-type.php
+    - an example custom post type
+    - example custom taxonomy (like categories)
+    - example custom taxonomy (like tags)
+*/
+// require_once('library/custom-post-type.php'); // you can disable this if you like
+/*
+3. library/admin.php
+    - removing some default WordPress dashboard widgets
+    - an example custom dashboard widget
+    - adding custom login css
+    - changing text in footer of admin
+*/
+// require_once('library/admin.php'); // this comes turned off by default
+/*
+4. library/translation/translation.php
+    - adding support for other languages
+*/
+// require_once('library/translation/translation.php'); // this comes turned off by default
+
+// Extra plugins
+// require_once('library/plugins.php');          // plugins & extra functions (optional)
 
 // Options panel
-require_once('library/options-panel.php');
+ require_once('library/options-panel.php');
 
 // Shortcodes
 require_once('library/shortcodes.php');
-
-// Admin Functions (commented out by default)
-// require_once('library/admin.php');         // custom admin functions
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
@@ -35,7 +67,7 @@ add_filter('admin_footer_text', 'bones_custom_admin_footer');
 // Thumbnail sizes
 add_image_size( 'wpf-featured', 639, 300, true );
 add_image_size ( 'wpf-home-featured', 970, 364, true );
-add_image_size( 'bones-thumb-600', 600, 150, false );
+add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
 to add more sizes, simply copy a line from above 
@@ -63,18 +95,8 @@ you like. Enjoy!
 function bones_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar1',
-    	'name' => 'Main Sidebar',
-    	'description' => 'Used on every page BUT the homepage page template.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    
-    register_sidebar(array(
-    	'id' => 'sidebar2',
-    	'name' => 'Homepage Sidebar',
-    	'description' => 'Used only on the homepage page template.',
+    	'name' => 'Sidebar 1',
+    	'description' => 'The first (primary) sidebar.',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -89,7 +111,15 @@ function bones_register_sidebars() {
     Just change the name to whatever your new
     sidebar's id is, for example:
     
-    
+    register_sidebar(array(
+    	'id' => 'sidebar2',
+    	'name' => 'Sidebar 2',
+    	'description' => 'The second (secondary) sidebar.',
+    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    	'after_widget' => '</div>',
+    	'before_title' => '<h4 class="widgettitle">',
+    	'after_title' => '</h4>',
+    ));
     
     To call the sidebar in your template, you can just copy
     the sidebar.php file and rename it to your sidebar's name.
@@ -101,13 +131,13 @@ function bones_register_sidebars() {
 
 /************* ENQUEUE CSS AND JS *****************/
 
-function theme_styles()  
-{ 
+function theme_styles()
+{
     // Bring in Open Sans from Google fonts
     wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300,800&subset=latin,latin-ext');
     // This is the compiled css file from SCSS
     wp_register_style( 'foundation-app', get_template_directory_uri() . '/stylesheets/app.css', array(), '3.0', 'all' );
-    
+
     wp_enqueue_style( 'open-sans' );
     wp_enqueue_style( 'foundation-app' );
 }
@@ -118,31 +148,31 @@ add_action('wp_enqueue_scripts', 'theme_styles');
 
 /* pull jquery from google's CDN. If it's not available, grab the local copy. Code from wp.tutsplus.com :-) */
 
-$url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'; // the URL to check against  
-$test_url = @fopen($url,'r'); // test parameters  
-if( $test_url !== false ) { // test if the URL exists  
+$url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'; // the URL to check against
+$test_url = @fopen($url,'r'); // test parameters
+if( $test_url !== false ) { // test if the URL exists
 
-    function load_external_jQuery() { // load external file  
-        wp_deregister_script( 'jquery' ); // deregisters the default WordPress jQuery  
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'); // register the external file  
-        wp_enqueue_script('jquery'); // enqueue the external file  
-    }  
+    function load_external_jQuery() { // load external file
+        wp_deregister_script( 'jquery' ); // deregisters the default WordPress jQuery
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'); // register the external file
+        wp_enqueue_script('jquery'); // enqueue the external file
+    }
 
-    add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function  
-} else {  
+    add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function
+} else {
 
-    function load_local_jQuery() {  
-        wp_deregister_script('jquery'); // initiate the function  
+    function load_local_jQuery() {
+        wp_deregister_script('jquery'); // initiate the function
         wp_register_script('jquery', get_template_directory_uri().'/javascripts/foundation/jquery.js', __FILE__, '1.7.2'); // register the local file
-        wp_enqueue_script('jquery'); // enqueue the local file  
-    }  
+        wp_enqueue_script('jquery'); // enqueue the local file
+    }
 
-    add_action('wp_enqueue_scripts', 'load_local_jQuery'); // initiate the function  
-}  
+    add_action('wp_enqueue_scripts', 'load_local_jQuery'); // initiate the function
+}
 
 /* load modernizr from foundation */
 function modernize_it(){
-    wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/foundation/modernizr.foundation.js' ); 
+    wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/foundation/modernizr.foundation.js' );
     wp_enqueue_script( 'modernizr' );
 }
 
@@ -192,46 +222,36 @@ add_action('wp_enqueue_scripts', 'wp_foundation_js');
 function bones_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="panel clearfix">
-			<div class="comment-author vcard row clearfix">
-                <div class="twelve columns">
-                    <div class="
-                        <?php
-                        $authID = get_the_author_meta('ID');
-                                                    
-                        if($authID == $comment->user_id)
-                            echo "panel callout";
-                        else
-                            echo "panel";
-                        ?>
-                    ">
-                        <div class="row">
-            				<div class="avatar two columns">
-            					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
-            				</div>
-            				<div class="ten columns">
-            					<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
-            					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-            					
-            					<?php edit_comment_link(__('Edit'),'<span class="edit-comment">', '</span>'); ?>
-                                
-                                <?php if ($comment->comment_approved == '0') : ?>
-                   					<div class="alert-box success">
-                      					<?php _e('Your comment is awaiting moderation.') ?>
-                      				</div>
-            					<?php endif; ?>
-                                
-                                <?php comment_text() ?>
-                                
-                                <!-- removing reply link on each comment since we're not nesting them -->
-            					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-			</div>
+		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+			<header class="comment-author vcard">
+			    <?php 
+			    /*
+			        this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
+			        echo get_avatar($comment,$size='32',$default='<path_to_url>' );
+			    */ 
+			    ?>
+			    <!-- custom gravatar call -->
+			    <?php
+			    	// create variable
+			    	$bgauthemail = get_comment_author_email();
+			    ?>
+			    <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>&s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+			    <!-- end custom gravatar call -->
+				<?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
+				<?php edit_comment_link(__('(Edit)', 'bonestheme'),'  ','') ?>
+			</header>
+			<?php if ($comment->comment_approved == '0') : ?>
+       			<div class="alert info">
+          			<p><?php _e('Your comment is awaiting moderation.', 'bonestheme') ?></p>
+          		</div>
+			<?php endif; ?>
+			<section class="comment_content clearfix">
+				<?php comment_text() ?>
+			</section>
+			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 		</article>
-    <!-- </li> is added by wordpress automatically -->
+    <!-- </li> is added by WordPress automatically -->
 <?php
 } // don't remove this bracket!
 
@@ -248,7 +268,7 @@ add_filter('comment_class', 'add_class_comments');
 function bones_wpsearch($form) {
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
     <label class="screen-reader-text" for="s">' . __('Search for:', 'bonestheme') . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search the Site..." />
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search the Site...','bonestheme').'" />
     <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
     </form>';
     return $form;
@@ -359,7 +379,7 @@ function custom_wp_nav_menu($var) {
 add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
 add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
 add_filter('page_css_class', 'custom_wp_nav_menu');
- 
+
 //Replaces "current-menu-item" with "active"
 function current_to_active($text){
         $replace = array(
@@ -372,7 +392,7 @@ function current_to_active($text){
                 return $text;
         }
 add_filter ('wp_nav_menu','current_to_active');
- 
+
 //Deletes empty classes and removes the sub menu class
 function strip_empty_classes($menu) {
     $menu = preg_replace('/ class=""| class="sub-menu"/','',$menu);
@@ -389,19 +409,19 @@ class description_walker extends Walker_Nav_Menu
       {
             global $wp_query;
             $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-            
+
             $class_names = $value = '';
-            
+
             // If the item has children, add the dropdown class for foundation
             if ( $args->has_children ) {
                 $class_names = "has-flyout ";
             }
-            
+
             $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-            
+
             $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
             $class_names = ' class="'. esc_attr( $class_names ) . '"';
-           
+
             $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
             $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -428,12 +448,12 @@ class description_walker extends Walker_Nav_Menu
 
             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             }
-            
+
         function start_lvl(&$output, $depth) {
             $indent = str_repeat("\t", $depth);
             $output .= "\n$indent<ul class=\"flyout\">\n";
         }
-            
+
         function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output )
             {
                 $id_field = $this->db_fields['id'];
@@ -441,7 +461,7 @@ class description_walker extends Walker_Nav_Menu
                     $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
                 }
                 return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-            }       
+            }
 }
 
 // Walker class to customize footer links
@@ -451,14 +471,14 @@ class footer_links_walker extends Walker_Nav_Menu
       {
             global $wp_query;
             $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-            
+
             $class_names = $value = '';
-            
+
             $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-            
+
             $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
             $class_names = ' class="'. esc_attr( $class_names ) . '"';
-           
+
             $output .= $indent . '<li ' . $value . $class_names .'>';
 
             $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -470,18 +490,18 @@ class footer_links_walker extends Walker_Nav_Menu
             $item_output .= '<a'. $attributes .'>';
             $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
             $item_output .= $args->link_after;
-            
+
             $item_output .= '</a>';
             $item_output .= $args->after;
 
             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             }
-            
+
         function start_lvl(&$output, $depth) {
             $indent = str_repeat("\t", $depth);
             $output .= "\n$indent<ul class=\"flyout\">\n";
         }
-            
+
         function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output )
             {
                 $id_field = $this->db_fields['id'];
@@ -489,7 +509,7 @@ class footer_links_walker extends Walker_Nav_Menu
                     $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
                 }
                 return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-            }       
-} 
+            }
+}
 
 ?>

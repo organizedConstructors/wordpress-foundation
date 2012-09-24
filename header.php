@@ -9,9 +9,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		
 		<title><?php wp_title('', true, 'right'); ?></title>
-				
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		
 		<!-- icons & favicons -->
@@ -28,14 +26,14 @@
 				
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>
-			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
 
 		<!-- html5.js -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		
+
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
 		<!-- wordpress head functions -->
@@ -44,79 +42,78 @@
 
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
-		
 		<!-- bring in theme options styles -->
-		<?php 
+		<?php
 		$theme_options_styles = "";
 
 		$heading_typography = of_get_option('heading_typography');
 		if ($heading_typography) {
 			$theme_options_styles = '
-			h1, h2, h3, h4, h5, h6{ 
-				font-family: ' . $heading_typography['face'] . '; 
-				font-weight: ' . $heading_typography['style'] . '; 
-				color: ' . $heading_typography['color'] . '; 
+			h1, h2, h3, h4, h5, h6{
+				font-family: ' . $heading_typography['face'] . ';
+				font-weight: ' . $heading_typography['style'] . ';
+				color: ' . $heading_typography['color'] . ';
 			}';
 		}
-		
+
 		$main_body_typography = of_get_option('main_body_typography');
 		if ($main_body_typography) {
 			$theme_options_styles .= '
-			body{ 
-				font-family: ' . $main_body_typography['face'] . '; 
-				font-weight: ' . $main_body_typography['style'] . '; 
-				color: ' . $main_body_typography['color'] . '; 
+			body{
+				font-family: ' . $main_body_typography['face'] . ';
+				font-weight: ' . $main_body_typography['style'] . ';
+				color: ' . $main_body_typography['color'] . ';
 			}';
 		}
-		
+
 		$link_color = of_get_option('link_color');
 		if ($link_color) {
 			$theme_options_styles .= '
-			a{ 
-				color: ' . $link_color . '; 
+			a{
+				color: ' . $link_color . ';
 			}';
 		}
-		
+
 		$link_hover_color = of_get_option('link_hover_color');
 		if ($link_hover_color) {
 			$theme_options_styles .= '
-			a:hover{ 
-				color: ' . $link_hover_color . '; 
+			a:hover{
+				color: ' . $link_hover_color . ';
 			}';
 		}
-		
+
 		$link_active_color = of_get_option('link_active_color');
 		if ($link_active_color) {
 			$theme_options_styles .= '
-			a:active{ 
-				color: ' . $link_active_color . '; 
+			a:active{
+				color: ' . $link_active_color . ';
 			}';
 		}
-		
+
 		$topbar_bg_color = of_get_option('top_nav_bg_color');
 		if ($topbar_bg_color) {
 			$theme_options_styles .= '
-			.top-nav { 
+			.top-nav {
 				background-color: '. $topbar_bg_color . ';
 			}';
 		}
-		
+
 		$topbar_link_color = of_get_option('top_nav_link_color');
 		if ($topbar_link_color) {
 			$theme_options_styles .= '
-			.top-nav > li > a { 
+			.top-nav > li > a {
 				color: '. $topbar_link_color . ' !important;
 			}';
 		}
-		
+
 		$topbar_link_hover_color = of_get_option('top_nav_link_hover_color');
 		if ($topbar_link_hover_color) {
 			$theme_options_styles .= '
-			.top-nav > li > a:hover { 
+			.top-nav > li > a:hover {
 				color: '. $topbar_link_hover_color . ' !important;
 			}';
 		}
-		
+
 		$suppress_comments_message = of_get_option('suppress_comments_message');
 		if ($suppress_comments_message){
 			$theme_options_styles .= '
@@ -124,28 +121,28 @@
 				border-bottom: none;
 			}';
 		}
-						
+
 		if($theme_options_styles){
-			echo '<style>' 
+			echo '<style>'
 			. $theme_options_styles . '
 			</style>';
 		}
-		
+
 		?>
-				
+
 	</head>
-	
+
 	<body <?php body_class(); ?>>
 
 		<div class="row container">
 			<div class="twelve columns">
 				<header role="banner" id="top-header">
-					
+
 					<div class="siteinfo">
 						<h1><a class="brand" id="logo" href="<?php echo get_bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 						<h4 class="subhead"><?php echo get_bloginfo ( 'description' ); ?></h4>
 					</div>
-			
+
 					<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 
 					<div class="show-for-small menu-action">

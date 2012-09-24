@@ -12,13 +12,70 @@ Author: Eddie Machado
 BONES CHANGE LOG & HISTORY
 ******************************************************************/
 
+/* v1.3 update */
+- removed version number from scripts & styles (thanks James)
+- removed LESS (it's over Johnny, It's OVER!)
+- changed post-content to entry-content
+- added other changes to better align with Readability standards: http://www.readability.com/developers/guidelines (thanks @ChrisSki)
+- added comment gravatar variable
+- added fix for author name not showing in archive.php
+- removed unused css files (that were mistakingly compiled)
+- BORDER BOX ALL THE THINGS (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+
+/* v1.25 update */
+- updated custom post type page for translation
+- added => to responsive jquery
+- cleaned up theme tags (which make NO sense, but are best practice, go figure)
+- updated html element to match hb5
+- fixed echo problem on admin.php
+- updated normalize (LESS also had some missing styles so I added them)
+- GetComputedStyle fix for IE (for responsive js)
+- cleaned up mixins (border radius)
+- added translations! (Chinese, Spanish)
+
+/* v1.2 HUGE update */
+- merge responsive version with classic
+- remove post title from read more link (it's way too long)
+- removed readme.txt (it was pointless)
+- organized info for each file called in on the functions page
+- added custom gravatar call in comments
+- i'm leaving jQuery to a plugin (that way I'm not providing dated jQuery)
+- added translation folder
+- put everything inside stuff so it's easier to be translated
+- added an identifier in each 404 area so you know what template is showing
+- remove custom walker. I think that's better left for you guys to do
+- fixed some spelling errors
+- added some translation options in the comments file
+- added role=navigation to footer links
+- deleted image.php (who really uses that anyway)
+- added sidebar to search.php
+- added class to custom post type title
+- added link to custom meta box
+- removed selectivizr
+- updated html elements with new classes for IE
+- added new mobile meta tags
+- removed pinned site meta tag for IE9
+- merged base.css into style.css for one less call in the header
+- added styleguide page and styles (oh yea!)
+- added nav class to both menus
+- removed "Powered by Wordpress & Bones" from footer, because let's face it: we all delete this anyway.
+- added button class to submit comment button
+- removed html5 placeholder fallback (you should be using Gravity Forms)
+- added slug and rewrite to custom post type for easier urls
+- renamed the border radius mixins so they were easer to remember
+- removed duplicate box shadow mixin
+- deleted the plugins.php file
+- facebook og:meta can be better handled by a plugin (or Yoast's SEO plugin)
+- rel=me can also be handled by SEO plugin or another plugin
+- removed author.php (you can use archive.php or add it yourself)
+
 /* v1.09 more updates */
 - updated admin.php to include custom widget examples, admin login styles, and admin footer
 - login.css added for custom login styles
 - custom login logo included
 
 /* v1.09 updates */
-- added snippet to remove < p > from imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/) 
+- added snippet to remove < p > from imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 - added custom admin functions file
 - updated normalize
 - added site description < p > to the header
@@ -32,7 +89,7 @@ BONES CHANGE LOG & HISTORY
 
 /*v1.08 release (hellz yea!) */
 - replaced default.css with normalize.css
-- added responsive.css 
+- added responsive.css
 - completely revamped styles & stylesheets
 - moved most design related styles to style.css
 - newer, cleaner default comment styles
@@ -96,11 +153,11 @@ BONES CHANGE LOG & HISTORY
 - added theme translation to all files
 - removed categories form page meta info
 - fixed confusing copyright issues
-- removed the unneeded author / tag / ect archive title from taxonomy-custom-cat.php 
+- removed the unneeded author / tag / ect archive title from taxonomy-custom-cat.php
 
 
 /* v1.06 Updates */
-- changed name of default stylesheet to default so it's easier to 
+- changed name of default stylesheet to default so it's easier to
 	debug. (having two stylesheets named style is confusing)
 - added clearing class to #inner-header and #inner-footer
 - added bones body class depending on what browser
@@ -122,7 +179,7 @@ BONES CHANGE LOG & HISTORY
 - added readme.txt file (really for no reason at all)
 - fixed the margin on the comments title
 - removed duplicate text-align calls in css /* Thanks Dom */
-- added add_theme_support( 'automatic-feed-links' ) replacing 
+- added add_theme_support( 'automatic-feed-links' ) replacing
 	the deprecated automatic_feed_links();
 - added the language_attributes(); to the html tag
 - replaced attribute_escape with esc_attr() in search.php
@@ -170,7 +227,7 @@ BONES CHANGE LOG & HISTORY
 - changed the way page navi is called in the archives, search,
 	and index pages.
 
-	
+
 /* v1.03 */
 - public release!
 - added html5 video to plugins
@@ -186,7 +243,7 @@ BONES CHANGE LOG & HISTORY
 
 /* v1.01 */
 - added related posts functions
-- general css fixes 
+- general css fixes
 
 
 /* v1.00 */

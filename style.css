@@ -59,6 +59,9 @@ header .menu-action .button.small svg {
 .mobile-nav-container,
 #main{
 	-moz-transition: all 0.25s ease-in 0s;
+  -webkit-transition: all 0.25s ease-in 0s;
+  -o-transition: all 0.25s ease-in 0s;
+  transition: all 0.25s ease-in 0s;
 }
 
 .side-nav{

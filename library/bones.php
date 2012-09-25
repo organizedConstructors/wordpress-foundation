@@ -230,9 +230,9 @@ function bones_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu(
     	array(
-    		'menu' => 'main_nav', /* menu name */
+    		'menu' => __( 'The Main Menu', 'bonestheme' ), /* menu name */
     		'menu_class' => 'top-nav nav-bar hide-for-small',
-    		'theme_location' => 'main-nav', /* where in the theme it's assigned */
+    		'theme_location' =>  'main-nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container tag */
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
     		'depth' => '2',
@@ -245,7 +245,7 @@ function bones_mobile_nav() {
 	// display the wp3 menu if available
     wp_nav_menu(
     	array(
-    		'menu' => 'mobile_nav', /* menu name */
+    		'menu' => __( 'Mobile navigation', 'bonestheme' ), /* menu name */
     		'menu_class' => 'side-nav tabs vertical',
     		'theme_location' => 'main-nav', /* where in the theme it's assigned */
     		'container_class' => 'mobile-nav-container', /* container tag */
@@ -258,9 +258,9 @@ function bones_footer_links() {
 	// display the wp3 menu if available
     wp_nav_menu(
     	array(
-    		'menu' => 'footer_links', /* menu name */
+    		'menu' => __( 'Footer Links', 'bonestheme' ), /* menu name */
     		'menu_class' => 'link-list',
-    		'theme_location' => 'footer_links', /* where in the theme it's assigned */
+    		'theme_location' => 'footer-links', /* where in the theme it's assigned */
     		'container_class' => 'footer-links clearfix', /* container class */
     		'fallback_cb' => 'bones_footer_links_fallback', /* menu fallback */
     		'walker' => new footer_links_walker()
@@ -301,7 +301,7 @@ function bones_related_posts() {
 	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 	        <?php endforeach; }
 	    else { ?>
-            <?php echo '<li class="no_related_post">No Related Posts Yet!</li>'; ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
@@ -344,30 +344,29 @@ function bones_page_navi($before = '', $after = '') {
 		$start_page = 1;
 	}
 
-	echo $before.'<ul class="pagination clearfix">'."";
-	if ($paged > 1) {
-		$first_page_text = "&laquo";
-		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="First">'.$first_page_text.'</a></li>';
-	}
-
-	echo '<li class="">';
-	previous_posts_link('&larr; Previous');
-	echo '</li>';
-	for($i = $start_page; $i  <= $end_page; $i++) {
-		if($i == $paged) {
-			echo '<li class="current"><a href="#">'.$i.'</a></li>';
-		} else {
-			echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
-		}
-	}
-	echo '<li class="">';
-	next_posts_link('Next &rarr;');
-	echo '</li>';
-	if ($end_page < $max_page) {
-		$last_page_text = "&raquo;";
-		echo '<li class="next"><a href="'.get_pagenum_link($max_page).'" title="Last">'.$last_page_text.'</a></li>';
-	}
-	echo '</ul>'.$after."";
+	echo $before.'<nav class="page-navigation"><ul class="bones_page_navi pagination clearfix">'."";
+  if ($start_page >= 2 && $pages_to_show < $max_page) {
+    $first_page_text = __( "First", 'bonestheme' );
+    echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
+  }
+  echo '<li class="bpn-prev-link">';
+  previous_posts_link('<<');
+  echo '</li>';
+  for($i = $start_page; $i  <= $end_page; $i++) {
+    if($i == $paged) {
+      echo '<li class="current bpn-current"><a href="">'.$i.'</a></li>';
+    } else {
+      echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
+    }
+  }
+  echo '<li class="bpn-next-link">';
+  next_posts_link('>>');
+  echo '</li>';
+  if ($end_page < $max_page) {
+    $last_page_text = __( "Last", 'bonestheme' );
+    echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
+  }
+  echo '</ul></nav>'.$after."";
 }
 
 /*********************
@@ -386,6 +385,22 @@ function bones_excerpt_more($more) {
 	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
 }
 
-
+/*
+ * This is a modified the_author_posts_link() which just returns the link.
+ *
+ * This is necessary to allow usage of the usual l10n process with printf().
+ */
+function bones_get_the_author_posts_link() {
+ global $authordata;
+ if ( !is_object( $authordata ) )
+   return false;
+ $link = sprintf(
+   '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+   get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
+   esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
+   get_the_author()
+ );
+ return $link;
+}
 
 ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-			
+
 			<div id="content" class="clearfix">
 
         <div id="main" class="eight columns clearfix" role="main">
@@ -12,7 +12,9 @@
 
                 <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                <p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&amp;</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+                  <p class="meta byline vcard"><?php
+                    printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'bonestheme'), get_the_time('Y-m-j'), get_the_time(__('F js, Y', 'bonestheme')), bones_get_the_author_posts_link(), get_the_category_list(', '));
+                  ?></p>
 
               </header> <!-- end article header -->
 
@@ -22,7 +24,7 @@
 
               <footer class="article-footer">
 
-                <?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+                 <?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
 
               </footer> <!-- end article footer -->
 
@@ -51,7 +53,7 @@
         </div> <!-- end #main -->
 
         <?php get_sidebar(); ?>
-    
+
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

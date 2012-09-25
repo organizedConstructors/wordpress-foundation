@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-			
+
 			<div id="content" class="clearfix">
-			
+
           <div id="main" class="eight columns clearfix clearfix" role="main">
 
             <?php if (is_category()) { ?>
@@ -47,7 +47,9 @@
 
                 <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
-                <p class="meta byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+                <p class="meta byline vcard"><?php
+                    printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme'), get_the_time('Y-m-j'), get_the_time(__('F jS, Y', 'bonestheme')), bones_get_the_author_posts_link(), get_the_category_list(', '));
+                ?></p>
 
               </header> <!-- end article header -->
 
@@ -97,7 +99,7 @@
           </div> <!-- end #main -->
 
           <?php get_sidebar(); ?>
-                
+
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

@@ -1,0 +1,678 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress Foundation v2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-09-25 21:02:16+0000\n"
+"Last-Translator: Zoltán Adamek <adamek.zoltan@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:13
+#@ bonestheme
+msgid "Epic 404 - Article Not Found"
+msgstr "Epikus 404 van! - A bejegyzés nem található."
+
+#: 404.php:19
+#@ bonestheme
+msgid "The article you were looking for was not found, but maybe try looking again!"
+msgstr "A bejegyzés, amit kerestél, nem található. Próbáld meg újra, másképp!"
+
+#: admin/options-framework.php:229
+#@ default
+msgid "Save Options"
+msgstr ""
+
+#: admin/options-framework.php:230
+#@ default
+msgid "Restore Defaults"
+msgstr ""
+
+#: admin/options-framework.php:230
+#@ default
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework.php:265
+#@ optionsframework
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework.php:306
+#@ optionsframework
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-framework.php:364
+#@ default
+msgid "Theme Options"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:26
+#@ default
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:128
+#@ default
+msgid "Upload"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:151
+#@ optionsframework
+msgid "View File"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+#@ optionsframework
+msgid "Gallery"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+#@ optionsframework
+msgid "Previously Uploaded"
+msgstr ""
+
+#: archive-custom_type.php:20
+#: page-custom.php:24
+#: page.php:16
+#, php-format
+#@ bonestheme
+msgid "Posted <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> by <span class=\"author\">%3$s</span>."
+msgstr "<span class=\"author\">%3$s</span> küldte be ekkor: <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time>."
+
+#: archive-custom_type.php:20
+#: archive.php:51
+#: functions.php:241
+#: page-custom.php:24
+#: page.php:16
+#: search.php:17
+#@ bonestheme
+msgid "F jS, Y"
+msgstr "Y. F j."
+
+#: archive-custom_type.php:44
+#: archive.php:77
+#: index.php:42
+#: search.php:40
+#: taxonomy-custom_cat.php:57
+#@ bonestheme
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Régebbi bejegyzések"
+
+#: archive-custom_type.php:45
+#: archive.php:78
+#: index.php:43
+#: search.php:41
+#: taxonomy-custom_cat.php:58
+#@ bonestheme
+msgid "Newer Entries &raquo;"
+msgstr "Újabb bejegyzések &raquo;"
+
+#: archive-custom_type.php:54
+#: archive.php:87
+#: index.php:52
+#: page-custom.php:49
+#: page.php:39
+#: single-custom_type.php:58
+#: single.php:41
+#: taxonomy-custom_cat.php:67
+#@ bonestheme
+msgid "Oops, Post Not Found!"
+msgstr "Hupsz, a bejegyzés nem található!"
+
+#: archive-custom_type.php:57
+#: archive.php:90
+#: index.php:55
+#: page-custom.php:52
+#: page.php:42
+#: single-custom_type.php:61
+#: single.php:44
+#: taxonomy-custom_cat.php:70
+#@ bonestheme
+msgid "Uh Oh. Something is missing. Try double checking things."
+msgstr "Uh. Valami hiányzik. Ellenőrizz mindent újra."
+
+#: archive-custom_type.php:60
+#@ bonestheme
+msgid "This is the error message in the custom posty type archive template."
+msgstr "Ez egy hibaüzenet az egyedi tartalomtípus archívum sablonfájljában."
+
+#: archive.php:9
+#: taxonomy-custom_cat.php:22
+#@ bonestheme
+msgid "Posts Categorized:"
+msgstr "Bejegyzések a következő kategóriában:"
+
+#: archive.php:14
+#@ bonestheme
+msgid "Posts Tagged:"
+msgstr "Bejegyzések a következő címkével:"
+
+#: archive.php:23
+#@ bonestheme
+msgid "Posts By:"
+msgstr "Bejegyzések a következő szerzőtől:"
+
+#: archive.php:28
+#@ bonestheme
+msgid "Daily Archives:"
+msgstr "Napi archívumok:"
+
+#: archive.php:33
+#@ bonestheme
+msgid "Monthly Archives:"
+msgstr "Havi archívumok:"
+
+#: archive.php:38
+#@ bonestheme
+msgid "Yearly Archives:"
+msgstr "Éves archívumok:"
+
+#: archive.php:51
+#: index.php:16
+#: search.php:17
+#: single-custom_type.php:31
+#: taxonomy-custom_cat.php:33
+#, php-format
+#@ bonestheme
+msgid "Posted <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> by <span class=\"author\">%3$s</span> <span class=\"amp\">&</span> filed under %4$s."
+msgstr "<span class=\"author\">%3$s</span> küldte be ekkor: <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> a következőkbe: %4$s."
+
+#: archive.php:93
+#@ bonestheme
+msgid "This is the error message in the archive.php template."
+msgstr "Ez egy hibaüzenet az archive.php sablonfájlban."
+
+#: comments.php:12
+#@ bonestheme
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Ez a bejegyzés jelszóval védett. Add meg a jelszót, hogy láthasd a hozzászólásokat."
+
+#: comments.php:23
+#@ bonestheme
+msgid "<span>No</span> Responses"
+msgstr "<span>Nincsenek</span> hozzászólások"
+
+#: comments.php:23
+#@ bonestheme
+msgid "<span>One</span> Response"
+msgstr "<span>Egy</span> hozzászólás"
+
+#: comments.php:23
+#@ bonestheme
+msgid "<span>%</span> Response"
+msgid_plural "<span>%</span> Responses"
+msgstr[0] "<span>%</span> hozzászólás"
+
+#: comments.php:51
+#@ bonestheme
+msgid "Comments are closed."
+msgstr "A hozzászólások zárolva vannak."
+
+#: comments.php:62
+#@ bonestheme
+msgid "Leave a Reply"
+msgstr "Szólj hozzá Te is!"
+
+#: comments.php:62
+#, php-format
+#@ bonestheme
+msgid "Leave a Reply to %s"
+msgstr "Szólj hozzá Te is ehhez: „%s”!"
+
+#: comments.php:70
+#, php-format
+#@ bonestheme
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr "%1$sBe kell jelentkezned%2$s ahhoz, hogy hozzá tudj szólni a bejegyzéshez."
+
+#: comments.php:78
+#@ bonestheme
+msgid "Logged in as"
+msgstr "Be vagy jelentkezve, mint"
+
+#: comments.php:78
+#@ bonestheme
+msgid "Log out of this account"
+msgstr "Kijelentkeznél?"
+
+#: comments.php:78
+#@ bonestheme
+msgid "Log out"
+msgstr "Kijelentkezés"
+
+#: comments.php:78
+#@ bonestheme
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: comments.php:85
+#@ bonestheme
+msgid "Name"
+msgstr "Név"
+
+#: comments.php:85
+#: comments.php:90
+#@ default
+msgid "(required)"
+msgstr ""
+
+#: comments.php:86
+#@ bonestheme
+msgid "Your Name*"
+msgstr "Neved*"
+
+#: comments.php:90
+#@ bonestheme
+msgid "Mail"
+msgstr "E-mail cím"
+
+#: comments.php:91
+#@ bonestheme
+msgid "Your E-Mail*"
+msgstr "Az e-mail címed*"
+
+#: comments.php:92
+#@ bonestheme
+msgid "(will not be published)"
+msgstr "(nem fogjuk közzétenni, nyugi)"
+
+#: comments.php:96
+#@ bonestheme
+msgid "Website"
+msgstr "Weboldalad"
+
+#: comments.php:97
+#@ bonestheme
+msgid "Got a website?"
+msgstr "Ha van weboldalad, írd be bátran."
+
+#: comments.php:104
+#@ bonestheme
+msgid "Your Comment here..."
+msgstr "A hozzászólásod jön ide"
+
+#: comments.php:107
+#: functions.php:292
+#@ bonestheme
+#@ default
+msgid "Submit"
+msgstr "Beküldöm a hozzászólást!"
+
+#: comments.php:112
+#@ bonestheme
+msgid "You can use these tags"
+msgstr "A következő tag-eket használhatod"
+
+#: functions.php:98
+#@ bonestheme
+msgid "Sidebar 1"
+msgstr "Oldalsáv 1"
+
+#: functions.php:99
+#@ bonestheme
+msgid "The first (primary) sidebar."
+msgstr "Az elsődleges oldalsáv."
+
+#: functions.php:240
+#, php-format
+#@ bonestheme
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr "<cite class=\"fn\">%s</cite>"
+
+#: functions.php:242
+#@ bonestheme
+msgid "(Edit)"
+msgstr "(Szerkesztés)"
+
+#: functions.php:246
+#@ bonestheme
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólásod moderálásra vár."
+
+#: functions.php:270
+#@ bonestheme
+msgid "Search for:"
+msgstr "Keresés erre:"
+
+#: functions.php:271
+#@ bonestheme
+msgid "Search the Site..."
+msgstr "Keresés az oldalon"
+
+#: functions.php:272
+#@ default
+msgid "Search"
+msgstr ""
+
+#: functions.php:285
+#@ default
+msgid "<p>This post is password proteprotected. To view it please enter your password below:</p>"
+msgstr ""
+
+#: functions.php:287
+#@ default
+msgid "Password:"
+msgstr ""
+
+#: index.php:27
+#: page-custom.php:35
+#: page.php:27
+#: single.php:27
+#@ bonestheme
+msgid "Tags:"
+msgstr "Címkék:"
+
+#: index.php:58
+#@ bonestheme
+msgid "This is the error message in the index.php template."
+msgstr "Ez egy hibaüzenet az index.php sablonfájlban."
+
+#: library/admin.php:66
+#@ bonestheme
+msgid "j F Y @ g:i a"
+msgstr "Y. F j. @ H:i"
+
+#: library/admin.php:78
+#@ bonestheme
+msgid "Recently on Themble (Customize on admin.php)"
+msgstr "Nemrég a Themble-ön (Ezt az admin.php-val tudod testreszabni)"
+
+#: library/admin.php:123
+#@ bonestheme
+msgid "<span id=\"footer-thankyou\">Developed by <a href=\"http://yoursite.com\" target=\"_blank\">Your Site Name</a></span>. Built using <a href=\"http://themble.com/bones\" target=\"_blank\">Bones</a>."
+msgstr "<span id=\"footer-thankyou\">Fejlesztette a <a href=\"http://yoursite.com\" target=\"_blank\">[Ide kerül az oldalad neve].</a></span>. A <a href=\"http://themble.com/bones\" target=\"_blank\">Bones</a> használatával készült."
+
+#: library/bones.php:217
+#: library/bones.php:233
+#@ bonestheme
+msgid "The Main Menu"
+msgstr "Főmenü"
+
+#: library/bones.php:218
+#: library/bones.php:261
+#@ bonestheme
+msgid "Footer Links"
+msgstr "Lábléc linkek"
+
+#: library/bones.php:248
+#@ bonestheme
+msgid "Mobile navigation"
+msgstr "Mobil navigáció"
+
+#: library/bones.php:304
+#@ bonestheme
+msgid "No Related Posts Yet!"
+msgstr "Még nincsen ilyen bejegyzés."
+
+#: library/bones.php:349
+#@ bonestheme
+msgid "First"
+msgstr "Első"
+
+#: library/bones.php:366
+#@ bonestheme
+msgid "Last"
+msgstr "Utolsó"
+
+#: library/bones.php:400
+#, php-format
+#@ default
+msgid "Posts by %s"
+msgstr ""
+
+#: library/custom-post-type.php:24
+#@ bonestheme
+msgid "Custom Types"
+msgstr "Egyedi típusok"
+
+#: library/custom-post-type.php:25
+#@ bonestheme
+msgid "Custom Post"
+msgstr "Egyedi bejegyzés"
+
+#: library/custom-post-type.php:26
+#@ bonestheme
+msgid "All Custom Posts"
+msgstr "Minden egyedi bejegyzés"
+
+#: library/custom-post-type.php:27
+#@ bonestheme
+msgid "Add New"
+msgstr "Új"
+
+#: library/custom-post-type.php:28
+#@ bonestheme
+msgid "Add New Custom Type"
+msgstr "Új egyedi típus"
+
+#: library/custom-post-type.php:29
+#@ bonestheme
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: library/custom-post-type.php:30
+#@ bonestheme
+msgid "Edit Post Types"
+msgstr "Bejegyzéstípusok szerkesztése"
+
+#: library/custom-post-type.php:31
+#@ bonestheme
+msgid "New Post Type"
+msgstr "Új bejegyzéstípus"
+
+#: library/custom-post-type.php:32
+#@ bonestheme
+msgid "View Post Type"
+msgstr "Bejegyzéstípus megtekintése"
+
+#: library/custom-post-type.php:33
+#@ bonestheme
+msgid "Search Post Type"
+msgstr "Bejegyzéstípus keresése"
+
+#: library/custom-post-type.php:34
+#@ bonestheme
+msgid "Nothing found in the Database."
+msgstr "Semmi sem található az adatbázisban."
+
+#: library/custom-post-type.php:35
+#@ bonestheme
+msgid "Nothing found in Trash"
+msgstr "Semmi sem található a Kukában"
+
+#: library/custom-post-type.php:38
+#@ bonestheme
+msgid "This is the example custom post type"
+msgstr "Ez egy példa tartalomtípus"
+
+#: library/custom-post-type.php:75
+#@ bonestheme
+msgid "Custom Categories"
+msgstr "Egyedi kategóriák"
+
+#: library/custom-post-type.php:76
+#@ bonestheme
+msgid "Custom Category"
+msgstr "Egyedi kategória"
+
+#: library/custom-post-type.php:77
+#@ bonestheme
+msgid "Search Custom Categories"
+msgstr "Egyedi kategóriák keresése"
+
+#: library/custom-post-type.php:78
+#@ bonestheme
+msgid "All Custom Categories"
+msgstr "Minden egyedi kategória"
+
+#: library/custom-post-type.php:79
+#@ bonestheme
+msgid "Parent Custom Category"
+msgstr "Szülő egyedi kategória"
+
+#: library/custom-post-type.php:80
+#@ bonestheme
+msgid "Parent Custom Category:"
+msgstr "Szülő egyedi kategória:"
+
+#: library/custom-post-type.php:81
+#@ bonestheme
+msgid "Edit Custom Category"
+msgstr "Egyedi kategória szerkesztése"
+
+#: library/custom-post-type.php:82
+#@ bonestheme
+msgid "Update Custom Category"
+msgstr "Egyedi kategória frissítése"
+
+#: library/custom-post-type.php:83
+#@ bonestheme
+msgid "Add New Custom Category"
+msgstr "Új egyedi kategória hozzáadása"
+
+#: library/custom-post-type.php:84
+#@ bonestheme
+msgid "New Custom Category Name"
+msgstr "Új egyedi kategória neve"
+
+#: library/custom-post-type.php:97
+#@ bonestheme
+msgid "Custom Tags"
+msgstr "Egyedi címkék"
+
+#: library/custom-post-type.php:98
+#@ bonestheme
+msgid "Custom Tag"
+msgstr "Egyedi címke"
+
+#: library/custom-post-type.php:99
+#@ bonestheme
+msgid "Search Custom Tags"
+msgstr "Egyedi címkék keresése"
+
+#: library/custom-post-type.php:100
+#@ bonestheme
+msgid "All Custom Tags"
+msgstr "Minden egyedi címke"
+
+#: library/custom-post-type.php:101
+#@ bonestheme
+msgid "Parent Custom Tag"
+msgstr "Szülő egyedi címke"
+
+#: library/custom-post-type.php:102
+#@ bonestheme
+msgid "Parent Custom Tag:"
+msgstr "Szülő egyedi címke:"
+
+#: library/custom-post-type.php:103
+#@ bonestheme
+msgid "Edit Custom Tag"
+msgstr "Egyedi címke szerkesztése"
+
+#: library/custom-post-type.php:104
+#@ bonestheme
+msgid "Update Custom Tag"
+msgstr "Egyedi címke frissítése"
+
+#: library/custom-post-type.php:105
+#@ bonestheme
+msgid "Add New Custom Tag"
+msgstr "Új egyedi címke hozzáadása"
+
+#: library/custom-post-type.php:106
+#@ bonestheme
+msgid "New Custom Tag Name"
+msgstr "Új egyedi címke neve"
+
+#: page-custom.php:55
+#@ bonestheme
+msgid "This is the error message in the page-custom.php template."
+msgstr "Ez egy hibaüzenet a page-custom.php sablonfájlban."
+
+#: page.php:45
+#@ bonestheme
+msgid "This is the error message in the page.php template."
+msgstr "Ez egy hibaüzenet a page.php sablonfájlban."
+
+#: search.php:6
+#@ bonestheme
+msgid "Search Results for:"
+msgstr "Keresési találatok a következőre:"
+
+#: search.php:23
+#@ bonestheme
+msgid "Read more &raquo;"
+msgstr "Továbbolvasok &raquo;"
+
+#: search.php:50
+#@ bonestheme
+msgid "Sorry, No Results."
+msgstr "Bocsi, de nincs egy találat sem."
+
+#: search.php:53
+#@ bonestheme
+msgid "Try your search again."
+msgstr "Próbálkozz meg egy újabb kereséssel."
+
+#: search.php:56
+#@ bonestheme
+msgid "This is the error message in the search.php template."
+msgstr "Ez egy hibaüzenet a search.php sablonfájlban."
+
+#: sidebar.php:14
+#@ bonestheme
+msgid "Please activate some Widgets."
+msgstr "Kérlek, kapcsolj be néhány widget-et, ha jónak látod."
+
+#: single-custom_type.php:31
+#: single.php:16
+#: taxonomy-custom_cat.php:33
+#@ bonestheme
+msgid "F js, Y"
+msgstr "Y. F j."
+
+#: single-custom_type.php:44
+#@ bonestheme
+msgid "Custom Tags:"
+msgstr "Egyedi címkék:"
+
+#: single-custom_type.php:64
+#@ bonestheme
+msgid "This is the error message in the single-custom_type.php template."
+msgstr "Ez egy hibaüzenet a single-custom_type.php sablonfájlban."
+
+#: single.php:16
+#, php-format
+#@ bonestheme
+msgid "Posted <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> by <span class=\"author\">%3$s</span> <span class=\"amp\">&amp;</span> filed under %4$s."
+msgstr "<span class=\"author\">%3$s</span> küldte be ekkor: <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> a következőbe: %4$s."
+
+#: single.php:47
+#@ bonestheme
+msgid "This is the error message in the single.php template."
+msgstr "Ez egy hibaüzenet a single.php sablonfájlban."
+
+#: taxonomy-custom_cat.php:40
+#@ bonestheme
+msgid "Read More &raquo;"
+msgstr "Továbbolvasok &raquo;"
+
+#: taxonomy-custom_cat.php:73
+#@ bonestheme
+msgid "This is the error message in the taxonomy-custom_cat.php template."
+msgstr "Ez egy hibaüzenet a taxonomy-custom_cat.php sablonfájlban."
+

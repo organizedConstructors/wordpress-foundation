@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Wordpress Foundation v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-09-26 00:00+0100\n"
+"PO-Revision-Date: 2012-09-26 00:06+0100\n"
 "Last-Translator: Adamek Zoltán <adamek.zoltan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -191,20 +191,20 @@ msgstr "Ez a bejegyzés jelszóval védett. Add meg a jelszót, hogy láthasd a 
 
 #@ bonestheme
 #: comments.php:23
-msgid "<span>No</span> Responses"
-msgstr "<span>Nincsenek</span> hozzászólások"
+msgid "<span>No</span> Responses to"
+msgstr "<span>Nincsenek</span> hozzászólások a következőre:"
 
 #@ bonestheme
 #: comments.php:23
-msgid "<span>One</span> Response"
-msgstr "<span>Egy</span> hozzászólás"
+msgid "<span>One</span> Response to"
+msgstr "<span>Egy</span> hozzászólás a következőre:"
 
 #@ bonestheme
 #: comments.php:23
-msgid "<span>%</span> Response"
-msgid_plural "<span>%</span> Responses"
-msgstr[0] "<span>%</span> hozzászólás"
-msgstr[1] "<span>%</span> hozzászólás"
+msgid "<span>%</span> Response to"
+msgid_plural "<span>%</span> Responses to"
+msgstr[0] "<span>%</span> hozzászólás a következőre:"
+msgstr[1] "<span>%</span> hozzászólás a következőre:"
 
 #@ bonestheme
 #: comments.php:51

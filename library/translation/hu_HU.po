@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Wordpress Foundation v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-09-25 21:02:16+0000\n"
+"PO-Revision-Date: 2012-09-25 21:15:33+0000\n"
 "Last-Translator: Zoltán Adamek <adamek.zoltan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -659,7 +659,7 @@ msgstr "Ez egy hibaüzenet a single-custom_type.php sablonfájlban."
 #, php-format
 #@ bonestheme
 msgid "Posted <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> by <span class=\"author\">%3$s</span> <span class=\"amp\">&amp;</span> filed under %4$s."
-msgstr "<span class=\"author\">%3$s</span> küldte be ekkor: <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> a következőbe: %4$s."
+msgstr "<span class=\"author\">%3$s</span> küldte be ekkor: <time class=\"updated\" datetime=\"%1$s\" pubdate>%2$s</time> a következőkbe: %4$s."
 
 #: single.php:47
 #@ bonestheme

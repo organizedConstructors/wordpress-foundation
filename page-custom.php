@@ -32,7 +32,7 @@ Template Name: Custom Page Example
 
 						    <footer class="article-footer">
 
-							    <p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+							    <p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ' ', ''); ?></p>
 
 						    </footer> <!-- end article footer -->
 

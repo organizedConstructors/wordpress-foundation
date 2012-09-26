@@ -235,7 +235,7 @@ function bones_comments($comment, $args, $depth) {
 			    	// create variable
 			    	$bgauthemail = get_comment_author_email();
 			    ?>
-			    <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>&s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+			    <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 			    <!-- end custom gravatar call -->
                 <?php printf(__('<cite class="fn">%s</cite>', 'bonestheme'), get_comment_author_link()) ?>
                 <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('F jS, Y', 'bonestheme')); ?> </a></time>
@@ -248,8 +248,8 @@ function bones_comments($comment, $args, $depth) {
 			<?php endif; ?>
 			<section class="comment_content clearfix">
 				<?php comment_text() ?>
+        <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 			</section>
-			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 		</article>
     <!-- </li> is added by WordPress automatically -->
 <?php
@@ -257,7 +257,7 @@ function bones_comments($comment, $args, $depth) {
 
 // Add grid classes to comments
 function add_class_comments($classes){
-    array_push($classes, "twelve", "columns");
+    array_push($classes, "indent-columns");
     return $classes;
 }
 add_filter('comment_class', 'add_class_comments');

@@ -274,7 +274,15 @@ ol.commentlist ul.children{
 	margin-left: 0;
 }
 
-ol.commentlist div.avatar{
+ol.commentlist li.depth-1.indent-columns {
+  padding: 1em;
+}
+ol.commentlist li.depth-1 li.indent-columns {
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+ol.commentlist .avatar{
 	float: left;
 	margin-right: 10px;
 }
@@ -284,8 +292,12 @@ ol.commentlist time{
 	color: #eeeeee;
 }
 
-ol.commentlist div.comment-author{
+ol.commentlist .comment-author{
 	position: relative;
+}
+
+ol.commentlist .comment_content {
+  position: relative;
 }
 
 .panel ol.commentlist a.comment-edit-link{

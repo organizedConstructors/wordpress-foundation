@@ -275,6 +275,10 @@ ol.commentlist ul.children {
   margin-left: 0;
 }
 
+ol.commentlist li.indent-columns {
+  float: none !important;
+}
+
 ol.commentlist li.depth-1.indent-columns {
   padding: 1em;
 }
@@ -297,6 +301,10 @@ ol.commentlist {
 
   .comment-author, .comment_content {
     position: relative;
+  }
+
+  .comment_content {
+    clear: both;
   }
 
   span.edit-comment {

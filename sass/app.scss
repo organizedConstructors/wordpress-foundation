@@ -415,3 +415,64 @@ a[class^='tag-link-']:hover {
   }
 }
 
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+// @TODO: Semantic grid
+// Maybe the worst part of the current WordPress-Foundation is that we
+// don't use the beautiful semantic grid yet. I will try that in this version
+// and clean up the "mess" in the master branch later when it's more
+// appropriate.
+
+// Grid ------------------------------------------------------------------------
+@mixin fullWidthColumn() {
+  @include column($totalColumns);
+}
+@mixin fullWidthMobileColumn() {
+  @include mobileColumn($mobileTotalColumns);
+}
+
+#main-wrapper {
+  @include outerRow();
+  @include mobileRow();
+}
+
+header#top-header {
+  @include fullWidthColumn();
+  @include fullWidthMobileColumn();
+}
+
+footer#bottom-footer {
+  @include outerRow();
+  @include mobileRow();
+  nav, p.attribution {
+    @include fullWidthColumn();
+    @include fullWidthMobileColumn();
+  }
+}
+
+#content {
+  @include outerRow();
+  @include mobileRow();
+}
+
+#main {
+  @include column(8);
+  @include fullWidthMobileColumn();
+  .full-width {
+    @include fullWidthColumn();
+  }
+}
+
+#sidebar1 {
+  @include column(4);
+  @include fullWidthMobileColumn();
+}
+
+// Fix all of those missing clearfixes semantically here -----------------------
+
+// -----------------------------------------------------------------------------
+section.comment_content {
+  clear: both;
+}

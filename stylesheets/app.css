@@ -1,25 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,800italic,300,800&subset=latin,latin-ext);
 /* line 51, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_semantic-grid.scss */
-.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, header#top-header, footer#bottom-footer nav, footer#bottom-footer p.attribution, #main, #main .full-width, #sidebar1 {
+.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, .siteinfo, #menu-wrapper, footer#bottom-footer nav, footer#bottom-footer p.attribution, #main, #main .full-width, #sidebar1 {
   float: left;
 }
 
 /* line 55, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_semantic-grid.scss */
-#main-wrapper, footer#bottom-footer, #content {
+#main-wrapper, header#top-header, footer#bottom-footer, #content {
   *zoom: 1;
 }
 /* line 4, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_clearfix.scss */
-#main-wrapper:before, footer#bottom-footer:before, #content:before, #main-wrapper:after, footer#bottom-footer:after, #content:after {
+#main-wrapper:before, header#top-header:before, footer#bottom-footer:before, #content:before, #main-wrapper:after, header#top-header:after, footer#bottom-footer:after, #content:after {
   content: "";
   display: table;
 }
 /* line 5, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_clearfix.scss */
-#main-wrapper:after, footer#bottom-footer:after, #content:after {
+#main-wrapper:after, header#top-header:after, footer#bottom-footer:after, #content:after {
   clear: both;
 }
 
 /* line 62, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_semantic-grid.scss */
-.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, header#top-header, footer#bottom-footer nav, footer#bottom-footer p.attribution, #main, #main .full-width, #sidebar1 {
+.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, .siteinfo, #menu-wrapper, footer#bottom-footer nav, footer#bottom-footer p.attribution, #main, #main .full-width, #sidebar1 {
   position: relative;
   min-height: 1px;
   padding: 0 15px;
@@ -4678,18 +4678,58 @@ a[class^='tag-link-']:hover {
 
 /* line 441, ../sass/app.scss */
 header#top-header {
-  width: 100%;
+  width: 1000px;
+  max-width: 100%;
+  min-width: 768px;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
   /* line 441, ../sass/app.scss */
   header#top-header {
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    *zoom: 1;
+  }
+  /* line 4, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_clearfix.scss */
+  header#top-header:before, header#top-header:after {
+    content: "";
+    display: table;
+  }
+  /* line 5, ../../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.0.9/scss/foundation/mixins/_clearfix.scss */
+  header#top-header:after {
+    clear: both;
+  }
+}
+
+/* line 446, ../sass/app.scss */
+.siteinfo {
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  /* line 446, ../sass/app.scss */
+  .siteinfo {
     float: left;
     width: 100%;
     padding: 0 15px;
   }
 }
 
-/* line 446, ../sass/app.scss */
+/* line 451, ../sass/app.scss */
+#menu-wrapper {
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  /* line 451, ../sass/app.scss */
+  #menu-wrapper {
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* line 456, ../sass/app.scss */
 footer#bottom-footer {
   width: 1000px;
   max-width: 100%;
@@ -4697,7 +4737,7 @@ footer#bottom-footer {
   margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
-  /* line 446, ../sass/app.scss */
+  /* line 456, ../sass/app.scss */
   footer#bottom-footer {
     width: auto;
     min-width: 0;
@@ -4715,12 +4755,12 @@ footer#bottom-footer {
     clear: both;
   }
 }
-/* line 449, ../sass/app.scss */
+/* line 459, ../sass/app.scss */
 footer#bottom-footer nav, footer#bottom-footer p.attribution {
   width: 100%;
 }
 @media only screen and (max-width: 767px) {
-  /* line 449, ../sass/app.scss */
+  /* line 459, ../sass/app.scss */
   footer#bottom-footer nav, footer#bottom-footer p.attribution {
     float: left;
     width: 100%;
@@ -4728,7 +4768,7 @@ footer#bottom-footer nav, footer#bottom-footer p.attribution {
   }
 }
 
-/* line 455, ../sass/app.scss */
+/* line 465, ../sass/app.scss */
 #content {
   width: 1000px;
   max-width: 100%;
@@ -4736,7 +4776,7 @@ footer#bottom-footer nav, footer#bottom-footer p.attribution {
   margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
-  /* line 455, ../sass/app.scss */
+  /* line 465, ../sass/app.scss */
   #content {
     width: auto;
     min-width: 0;
@@ -4755,29 +4795,29 @@ footer#bottom-footer nav, footer#bottom-footer p.attribution {
   }
 }
 
-/* line 460, ../sass/app.scss */
+/* line 470, ../sass/app.scss */
 #main {
   width: 66.66667%;
 }
 @media only screen and (max-width: 767px) {
-  /* line 460, ../sass/app.scss */
+  /* line 470, ../sass/app.scss */
   #main {
     float: left;
     width: 100%;
     padding: 0 15px;
   }
 }
-/* line 463, ../sass/app.scss */
+/* line 473, ../sass/app.scss */
 #main .full-width {
   width: 100%;
 }
 
-/* line 468, ../sass/app.scss */
+/* line 478, ../sass/app.scss */
 #sidebar1 {
   width: 33.33333%;
 }
 @media only screen and (max-width: 767px) {
-  /* line 468, ../sass/app.scss */
+  /* line 478, ../sass/app.scss */
   #sidebar1 {
     float: left;
     width: 100%;
@@ -4785,7 +4825,7 @@ footer#bottom-footer nav, footer#bottom-footer p.attribution {
   }
 }
 
-/* line 476, ../sass/app.scss */
-section.comment_content {
+/* line 486, ../sass/app.scss */
+section.comment_content, #content {
   clear: both;
 }

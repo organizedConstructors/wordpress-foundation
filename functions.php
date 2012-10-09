@@ -49,7 +49,7 @@ require_once('library/translation/translation.php'); // this comes turned off by
 // require_once('library/plugins.php');          // plugins & extra functions (optional)
 
 // Options panel
- require_once('library/options-panel.php');
+//require_once('library/options-panel.php');
 
 // Shortcodes
 require_once('library/shortcodes.php');

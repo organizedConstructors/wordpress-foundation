@@ -439,6 +439,16 @@ a[class^='tag-link-']:hover {
 }
 
 header#top-header {
+  @include outerRow();
+  @include mobileRow();
+}
+
+.siteinfo {
+  @include fullWidthColumn();
+  @include fullWidthMobileColumn();
+}
+
+#menu-wrapper {
   @include fullWidthColumn();
   @include fullWidthMobileColumn();
 }
@@ -472,7 +482,7 @@ footer#bottom-footer {
 
 // Fix all of those missing clearfixes semantically here -----------------------
 
-// -----------------------------------------------------------------------------
-section.comment_content {
+// Clear grid-related floats here ----------------------------------------------
+section.comment_content, #content {
   clear: both;
 }

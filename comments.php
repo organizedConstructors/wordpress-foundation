@@ -29,7 +29,7 @@ The comments page for Bones
 	 	</ul>
 	</nav>
 
-	<ol class="commentlist row">
+	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
 	</ol>
 
